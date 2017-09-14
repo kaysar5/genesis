@@ -27,10 +27,8 @@ namespace eStore_2017
         /// This the customer's phone number
         /// </summary>
         public int ContactNumber { get; set; }
-        /// <summary>
-        /// this is the customer's address
-        /// </summary>
-        public string Address { get; set; }
+        
+       
 # endregion
 
 

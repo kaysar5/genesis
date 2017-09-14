@@ -19,11 +19,11 @@ namespace eStore_2017
         /// <summary>
         /// Product's code number
         /// </summary>
-        public int ItemCode { get; set; }
+        public int ProductCode { get; set; }
         /// <summary>
         /// Whether the item is available or not
         /// </summary>
-        public bool InStock { get; set; }
+        public bool IsActive { get; set; }
         /// <summary>
         /// Manufacturing date
         /// </summary>
