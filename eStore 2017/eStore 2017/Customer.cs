@@ -4,20 +4,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace eStore_2017
+namespace StrollerStore
 {
-    #region Properties
+
     /// <summary>
     /// customer details
     /// </summary>
+
     class Customer
     {
+        private static int lastCustomerId = 0;
+
+        #region Properties
+
         /// <summary>
         /// Customer's identification number
         /// </summary>
-        public int CustomerId { get; set; }
+        public int CustomerId { get; }
         public string CustomerName { get; set; }
-        public string MiddleName { get; set; }
+
         public string LastName { get; set; }
         /// <summary>
         /// This the customer's email address
@@ -26,12 +31,18 @@ namespace eStore_2017
         /// <summary>
         /// This the customer's phone number
         /// </summary>
-        public int ContactNumber { get; set; }
-        
-       
-# endregion
+        public string ContactNumber { get; set; }
 
+        #endregion
 
+        #region Constructors
 
+        public Customer()
+        {
+            CustomerId = ++lastCustomerId;
+        }
+
+        #endregion
     }
+
 }

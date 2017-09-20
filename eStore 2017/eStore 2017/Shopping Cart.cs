@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace eStore_2017
+namespace StrollerStore
 {/// <summary>
 /// number of items that the cart contains
 /// </summary>
