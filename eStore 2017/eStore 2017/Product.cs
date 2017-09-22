@@ -6,12 +6,13 @@ using System.Threading.Tasks;
 
 namespace StrollerStore
 {
-    #region Properties
-    /// <summary>
-    /// Product Details
-    /// </summary>
+    
+    
     class Product
     {
+        private static int lastProductCode = 500;
+
+        #region Properties
         /// <summary>
         /// Product's name
         /// </summary>
@@ -19,17 +20,23 @@ namespace StrollerStore
         /// <summary>
         /// Product's code number
         /// </summary>
-        public int ProductCode { get; set; }
+        public int ProductCode { get;  }
         /// <summary>
         /// Whether the item is available or not
         /// </summary>
-        public bool IsActive { get; set; }
-        /// <summary>
-        /// Manufacturing date
-        /// </summary>
-        public DateTime LaunchDate { get; set; }
+        public bool IsActive { get;  }
+        public decimal ProductPrice { get; private set; }
+
+
         #endregion
 
+        #region Constructor
+        public Product()
+        {
+            ProductCode = ++lastProductCode;
+        }
+#endregion
 
     }
+   
 }

@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26730.12
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eStore 2017", "eStore 2017\eStore 2017.csproj", "{F910370C-3662-49C9-9C31-7DDB81A282B7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StrollerStore", "eStore 2017\StrollerStore.csproj", "{F910370C-3662-49C9-9C31-7DDB81A282B7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
