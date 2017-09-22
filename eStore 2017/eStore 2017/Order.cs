@@ -14,6 +14,15 @@ namespace StrollerStore
     /// </summary>
         public int OrderNumber { get; set; }
         public string OrderStatus { get; set; }
+        public Product OrderdedProduct { get; set; }
+        public int Quantity { get; set; }
+
+        public decimal OrderTotal()
+        {
+            decimal result;
+            result = Quantity * OrderdedProduct.ProductPrice;
+            return (result);
+        }
 
     }
 }
