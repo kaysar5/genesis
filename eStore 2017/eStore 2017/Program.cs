@@ -11,6 +11,7 @@ namespace StrollerStore
         static void Main(string[] args)
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
            var customer= Store.CreateCustomer("test@test.com", "Mike", "Jo", "2314445678");
 
             Console.WriteLine($"CI:{customer.CustomerId}, CN:{customer.CustomerName}, CL:{customer.LastName},CN:{customer.ContactNumber},EA:{customer.EmailAddress}");
@@ -23,6 +24,8 @@ namespace StrollerStore
                 ProductName = "Single Stroller"
             };
 =======
+=======
+>>>>>>> 2329b4a530f3134ed58b1eaab38afa077469dcfa
             #region Initialize
             // instantiate an object
             var customer = new Customer();
@@ -42,6 +45,7 @@ namespace StrollerStore
 
             //product.IsActive = true;
             #endregion Initialize
+<<<<<<< HEAD
 
 <<<<<<< HEAD
             var order = new Order();
@@ -61,10 +65,14 @@ namespace StrollerStore
             Console.WriteLine($"PN:{product.ProductName},PC:{product.ProductCode},PP:{product.ProductPrice},IA:{product.IsActive}");
             var product2 = new Product(200);
 =======
+=======
+
+>>>>>>> 2329b4a530f3134ed58b1eaab38afa077469dcfa
             Console.WriteLine($"CI:{customer.CustomerId}, CN:{customer.CustomerName}, CL:{customer.LastName},CN:{customer.ContactNumber},EA:{customer.EmailAddress}");
             Console.WriteLine($"CI:{customer2.CustomerId}, CN:{customer2.CustomerName}, CL:{customer2.LastName},CN:{customer2.ContactNumber},EA:{customer2.EmailAddress}");
             Console.WriteLine($"PN:{product.ProductName},PC:{product.ProductCode},PP:{product.ProductPrice}");
             var product2 = new Product(100);
+<<<<<<< HEAD
 >>>>>>> 2329b4a530f3134ed58b1eaab38afa077469dcfa
 
             Console.WriteLine($"PN:{product2.ProductName},PC:{product2.ProductCode},PP:{product2.ProductPrice}");
@@ -72,6 +80,10 @@ namespace StrollerStore
             Console.WriteLine($"OP:{order.OrderedProduct.ProductName},OS:{order.OrderStatus},,OQ: {order.Quantity}OT:{order.OrderTotal()}");
 
 
+=======
+
+            Console.WriteLine($"PN:{product2.ProductName},PC:{product2.ProductCode},PP:{product2.ProductPrice}");
+>>>>>>> 2329b4a530f3134ed58b1eaab38afa077469dcfa
 
 
 
