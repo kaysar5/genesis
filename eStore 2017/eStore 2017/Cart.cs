@@ -8,8 +8,10 @@ namespace StrollerStore
 {/// <summary>
 /// number of items that the cart contains
 /// </summary>
-    class Shopping_Cart
+    class Cart
     {
         public int TotalItems { get; set; }
+        public int AddItems { get; set; }
+        public int RemoveItems { get; set; }
     }
 }

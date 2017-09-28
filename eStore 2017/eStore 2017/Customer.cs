@@ -11,7 +11,7 @@ namespace StrollerStore
     /// customer details
     /// </summary>
 
-    class Customer
+    public class Customer
     {
         private static int lastCustomerId = 0;
 
