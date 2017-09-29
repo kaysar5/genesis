@@ -27,16 +27,10 @@ namespace StrollerStore
         /// Price of the product
         /// </summary>
         public decimal ProductPrice { get; private set; }
-        
+
         #endregion
 
         #region Constructor
-<<<<<<< HEAD
-        public Product(decimal price)
-        {
-            ProductCode = ++lastProductCode;
-            ProductPrice=price;
-=======
         /// <summary>
         /// Constructs a product 
         /// </summary>
@@ -44,10 +38,9 @@ namespace StrollerStore
         public Product(decimal price)
         {
             ProductCode = ++lastProductCode;
-            ProductPrice = price;
->>>>>>> 2329b4a530f3134ed58b1eaab38afa077469dcfa
+            ProductPrice=price;
         }
-#endregion
+        #endregion
    }
    
 }
