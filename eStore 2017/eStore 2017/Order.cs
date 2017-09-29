@@ -13,7 +13,6 @@ namespace StrollerStore
         #region Properties
         public string OrderStatus { get; set; }
 <<<<<<< HEAD
-<<<<<<< HEAD
         public int Quantity { get; set; }
         public Product OrderedProduct { get; set; }
 
@@ -30,8 +29,6 @@ namespace StrollerStore
 
         #endregion
 =======
-=======
->>>>>>> 2329b4a530f3134ed58b1eaab38afa077469dcfa
         public Product OrderdedProduct { get; set; }
         public int Quantity { get; set; }
 
@@ -41,9 +38,6 @@ namespace StrollerStore
             result = Quantity * OrderdedProduct.ProductPrice;
             return (result);
         }
-<<<<<<< HEAD
->>>>>>> 2329b4a530f3134ed58b1eaab38afa077469dcfa
-=======
 >>>>>>> 2329b4a530f3134ed58b1eaab38afa077469dcfa
 
     }
