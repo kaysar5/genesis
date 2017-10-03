@@ -43,13 +43,13 @@ namespace StrollerStore
 
 
 
-            Console.WriteLine($"PN:{product.ProductName},PC:{product.ProductCode},PP:{product.ProductPrice},IA:{product.IsActive}");
+            Console.WriteLine($"PN:{product.ProductName},PC:{product.ProductCode},PP:{product.ProductPrice}");
             var product2 = new Product(200);
 
             Console.WriteLine($"CI:{customer.CustomerId}, CN:{customer.CustomerName}, CL:{customer.LastName},CN:{customer.ContactNumber},EA:{customer.EmailAddress}");
             Console.WriteLine($"CI:{customer2.CustomerId}, CN:{customer2.CustomerName}, CL:{customer2.LastName},CN:{customer2.ContactNumber},EA:{customer2.EmailAddress}");
             Console.WriteLine($"PN:{product.ProductName},PC:{product.ProductCode},PP:{product.ProductPrice}");
-            var product2 = new Product(100);
+           
 
 
             Console.WriteLine($"PN:{product2.ProductName},PC:{product2.ProductCode},PP:{product2.ProductPrice}");
