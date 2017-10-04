@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace StrollerStore
 {
 
-    enum TypeOfPayment
+   public enum TypeOfPayment
     {
         Credit,
         Debit            

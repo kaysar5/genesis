@@ -28,10 +28,7 @@ namespace StrollerStore
         /// This the customer's email address
         /// </summary>
         public string EmailAddress { get; set; }
-        /// <summary>
-        /// This the customer's phone number
-        /// </summary>
-        public string ContactNumber { get; set; }
+        
 
         #endregion
 
