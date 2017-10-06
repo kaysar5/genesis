@@ -30,8 +30,33 @@ namespace StrollerStore
         {
             return customers;
         }
+        private static List<Product> products = new List<Product>();
+        /// <summary>
+        /// Factory for Products
+        /// </summary>
+        /// <param name="productName">name of the product</param>
+        /// <param name="productCode">lists Product code for each product</param>
+        /// <param name="productPrice">price of the product</param>
+        /// <returns>returns the new product</returns>
+        public static Product CreateProduct(string productName,  decimal price)
+        {
+            var product = new Product(price);
+            
+            product.ProductName = productName;          
+
+            products.Add(product);
+            return product;
+        }
+        public static List<Product> GetAllProducts()
+        {
+            return products;
+        }
+
+        }
+           
+            
+        }
     
-    }
     
     
-}
+

@@ -6,6 +6,11 @@ using System.Threading.Tasks;
 
 namespace StrollerStore
 {
+    public enum TypeOfStatus
+    {
+        Complete,
+        Incomplete
+    }
     class Order
     {
         

@@ -10,6 +10,15 @@ namespace StrollerStore
     {
         static void Main(string[] args)
         {
+            //Initialize customers
+            Store.CreateCustomer("someone@somewhere.com", "Some", "One");
+            Store.CreateProduct("Single Stroller", (decimal)250);
+            Store.CreateProduct("Double Stroller", (decimal)350);
+            Store.CreateProduct("Triple Stroller", (decimal)400);
+            Store.CreateProduct("Jogger Stroller", (decimal)200);
+
+
+
             Console.WriteLine("*********************");
             Console.WriteLine("Welcome to Stroller Store");
             Console.WriteLine("*************************");
@@ -42,6 +51,7 @@ namespace StrollerStore
                         Console.WriteLine($"CustomerID:{customer.CustomerId}");
                         break;
                     case "2":
+                        ChooseProduct();
 
                         break;
                     case "3":
@@ -61,9 +71,20 @@ namespace StrollerStore
                 }
             }
 
-        }       
+        }
+
+        private static void ChooseProduct()
+        {
+            Console.WriteLine("Here are the choices: ");
+            var productList = Store.GetAllProducts();
+
+            foreach (Product p in productList)
+            {
+                p.print();
+            }
 
 
+        }
     }
    
 }

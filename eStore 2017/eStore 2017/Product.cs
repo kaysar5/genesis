@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace StrollerStore
 {
+     
     
-    
-    class Product
+   public  class Product
     {
         private static int lastProductCode = 500;
        
@@ -39,6 +39,13 @@ namespace StrollerStore
         {
             ProductCode = ++lastProductCode;
             ProductPrice=price;
+        }
+
+        public void print()
+        {
+            Console.WriteLine("ProductName: " + ProductName);
+            Console.WriteLine("ProductCode: " + ProductCode);
+            Console.WriteLine("ProductPrice: "+ ProductPrice);
         }
         #endregion
    }
