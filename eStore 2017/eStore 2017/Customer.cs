@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,13 +21,20 @@ namespace StrollerStore
         /// <summary>
         /// Customer's identification number
         /// </summary>
-        public int CustomerId { get; }
-        public string CustomerName { get; set; }
+        [Key]       
 
+        public int CustomerId { get; private set; }
+        [Required]
+        [StringLength(20,ErrorMessage =" Name cannot be more than 20 charachters")]
+        public string CustomerName { get; set; }
+        [Required]
+        [StringLength(25, ErrorMessage =" Last name cannot be more than 25 charachters")]
         public string LastName { get; set; }
         /// <summary>
         /// This the customer's email address
         /// </summary>
+        [Required] 
+        [StringLength(50, ErrorMessage ="Email address cannot be more than 50 charachters")]
         public string EmailAddress { get; set; }
         
 

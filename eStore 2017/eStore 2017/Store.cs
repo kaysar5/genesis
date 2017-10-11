@@ -8,7 +8,8 @@ namespace StrollerStore
 {
     public static class Store
     {
-        private static List<Customer> customers = new List<Customer>();
+        private static StoreModel db = new StoreModel();
+
         /// <summary>
         /// estore creates an account for the customer
         /// </summary>
@@ -22,13 +23,14 @@ namespace StrollerStore
             customer.EmailAddress = emailAddress;
             customer.CustomerName = customerName;
             customer.LastName = lastName;
-            customers.Add(customer);
+            db.Customers.Add(customer);
+            db.SaveChanges();
             return customer;
         }
 
         public static List<Customer> GetAllCustomers()
         {
-            return customers;
+            return db.Customers.ToList();
         }
         private static List<Product> products = new List<Product>();
         /// <summary>
