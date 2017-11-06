@@ -1,4 +1,3 @@
-C:\Users\kayen\Documents\GitHub\genesis\eStore 2017\eStore 2017\obj\Debug\StrollerStore.csprojResolveAssemblyReference.cache
 C:\Users\kayen\Documents\GitHub\genesis\eStore 2017\eStore 2017\obj\Debug\StrollerStore.csproj.CoreCompileInputs.cache
 C:\Users\kayen\Documents\GitHub\genesis\eStore 2017\eStore 2017\obj\Debug\eStore 2017.exe
 C:\Users\kayen\Documents\GitHub\genesis\eStore 2017\eStore 2017\obj\Debug\eStore 2017.pdb
@@ -16,3 +15,4 @@ C:\Users\kayen\Documents\GitHub\genesis\eStore 2017\eStore 2017\bin\Debug\Entity
 C:\Users\kayen\Documents\GitHub\genesis\eStore 2017\eStore 2017\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\kayen\Documents\GitHub\genesis\eStore 2017\eStore 2017\bin\Debug\EntityFramework.xml
 C:\Users\kayen\Documents\GitHub\genesis\eStore 2017\eStore 2017\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\kayen\Documents\GitHub\genesis\eStore 2017\eStore 2017\obj\Debug\StrollerStore.csprojResolveAssemblyReference.cache

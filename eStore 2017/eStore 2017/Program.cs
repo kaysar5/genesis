@@ -11,11 +11,11 @@ namespace StrollerStore
         static void Main(string[] args)
         {
             //Initialize customers
-            Store.CreateCustomer("someone@somewhere.com", "Some", "One");
-            Store.CreateProduct("Single Stroller", (decimal)250);
-            Store.CreateProduct("Double Stroller", (decimal)350);
-            Store.CreateProduct("Triple Stroller", (decimal)400);
-            Store.CreateProduct("Jogger Stroller", (decimal)200);
+            //Store.CreateCustomer("someone@somewhere.com", "Some", "One");
+            //Store.CreateProduct("Single Stroller", (decimal)250);
+            //Store.CreateProduct("Double Stroller", (decimal)350);
+            //Store.CreateProduct("Triple Stroller", (decimal)400);
+            //Store.CreateProduct("Jogger Stroller", (decimal)200);
 
 
 
@@ -52,9 +52,16 @@ namespace StrollerStore
                         break;
                     case "2":
                         ChooseProduct();
-
+                         
                         break;
                     case "3":
+                        Console.WriteLine("Orderstatus");
+                        var orderStatus = Enum.GetNames(typeof(TypeOfStatus));
+                        for (int i = 0; i < orderStatus.Length; i++)
+                        {
+                            Console.WriteLine($"{i}.{orderStatus[i]}");
+                        }
+                        var orderType = (TypeOfStatus)Enum.Parse(typeof(TypeOfStatus), Console.ReadLine());
                         break;
                     case "4":
                         Console.WriteLine("Payment Type:");
@@ -76,7 +83,7 @@ namespace StrollerStore
         private static void ChooseProduct()
         {
             Console.WriteLine("Here are the choices: ");
-            var productList = Store.GetAllProducts();
+            var productList = Store.GetAllProduct();
 
             foreach (Product p in productList)
             {

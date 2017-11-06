@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,36 +11,27 @@ namespace StrollerStore
     
    public  class Product
     {
-        private static int lastProductCode = 500;
-       
         #region Properties
+
         /// <summary>
         /// Product's name
         /// </summary>
+        [Required]
         public string ProductName { get; set; }
 
         /// <summary>
         /// Product's code number
         /// </summary>
-        public int ProductCode { get;  }
-
+        [Key]
+        public int ProductCode { get; set; }
+        
         /// <summary>
         /// Price of the product
         /// </summary>
-        public decimal ProductPrice { get; private set; }
+        [Required]
+        public decimal ProductPrice { get;  set; }
 
         #endregion
-
-        #region Constructor
-        /// <summary>
-        /// Constructs a product 
-        /// </summary>
-        /// <param name="price">Price</param>
-        public Product(decimal price)
-        {
-            ProductCode = ++lastProductCode;
-            ProductPrice=price;
-        }
 
         public void print()
         {
@@ -47,7 +39,7 @@ namespace StrollerStore
             Console.WriteLine("ProductCode: " + ProductCode);
             Console.WriteLine("ProductPrice: "+ ProductPrice);
         }
-        #endregion
+      
    }
    
 }

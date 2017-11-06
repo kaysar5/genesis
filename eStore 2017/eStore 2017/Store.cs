@@ -10,6 +10,7 @@ namespace StrollerStore
     {
         private static StoreModel db = new StoreModel();
 
+        
         /// <summary>
         /// estore creates an account for the customer
         /// </summary>
@@ -28,9 +29,9 @@ namespace StrollerStore
             return customer;
         }
 
-        public static List<Customer> GetAllCustomers()
+        public static List<Customer> GetAllCustomers(string emailAddress)
         {
-            return db.Customers.ToList();
+            return db.Customers.Where(a=> a.EmailAddress== emailAddress).ToList();
         }
         private static List<Product> products = new List<Product>();
         /// <summary>
@@ -42,20 +43,41 @@ namespace StrollerStore
         /// <returns>returns the new product</returns>
         public static Product CreateProduct(string productName,  decimal price)
         {
-            var product = new Product(price);
+            var product = new Product();
             
-            product.ProductName = productName;          
-
-            products.Add(product);
+            product.ProductName = productName;           
+            product.ProductPrice = price;
+            db.Products.Add(product);
+            db.SaveChanges();
             return product;
         }
-        public static List<Product> GetAllProducts()
+        public static List<Product> GetProduct(int productCode)
         {
-            return products;
-        }
+            return db.Products.Where(a => a.ProductCode == productCode).ToList();
 
         }
-           
+
+        public static List<Product> GetAllProduct()
+        {
+            return db.Products.ToList();
+
+        }
+        public static Order CreateOrder(int orderNumber, string orderStatus, int Quantity)
+        {
+            var order = new Order();
+            order.OrderNumber = orderNumber;
+            order.OrderStatus = orderStatus;
+            order.Quantity = Quantity;
+            db.Orders.Add(order);
+            db.SaveChanges();
+            return order;
+        }
+        public static List<Order> GetAllOrders(int orderNumber)
+        {
+            return db.Orders.Where(a => a.OrderNumber == orderNumber).ToList();
+        }
+
+    }           
             
         }
     

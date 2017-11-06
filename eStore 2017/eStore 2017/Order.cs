@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,13 +12,17 @@ namespace StrollerStore
         Complete,
         Incomplete
     }
-    class Order
-    {
-        
-        
-        #region Properties
-        public string OrderStatus { get; set; }
 
+   public class Order
+    {
+
+
+        #region Properties
+        [Key]
+        public int OrderNumber { get; set; }
+        [Required]
+        public string OrderStatus { get; set; }
+        [Required]
         public int Quantity { get; set; }
         public Product OrderedProduct { get; set; }
 
