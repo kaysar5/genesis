@@ -12,7 +12,8 @@ namespace StrollerStore
 
         
         /// <summary>
-        /// estore creates an account for the customer
+        /// 
+        /// ore creates an account for the customer
         /// </summary>
         /// <param name="emailAddress">email address of the customer</param>
         /// <param name="customerName">first name of the customer</param>
@@ -54,14 +55,18 @@ namespace StrollerStore
         public static List<Product> GetProduct(int productCode)
         {
             return db.Products.Where(a => a.ProductCode == productCode).ToList();
-
         }
-
         public static List<Product> GetAllProduct()
         {
             return db.Products.ToList();
-
         }
+        /// <summary>
+        /// Order created
+        /// </summary>
+        /// <param name="orderNumber">order number given</param>
+        /// <param name="orderStatus">status of the order</param>
+        /// <param name="Quantity">total no of ordered products</param>
+        /// <returns>returns</returns>
         public static Order CreateOrder(int orderNumber, string orderStatus, int Quantity)
         {
             var order = new Order();
@@ -76,8 +81,7 @@ namespace StrollerStore
         {
             return db.Orders.Where(a => a.OrderNumber == orderNumber).ToList();
         }
-
-    }           
+    }          
             
         }
     

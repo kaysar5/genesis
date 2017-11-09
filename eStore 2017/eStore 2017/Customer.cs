@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
@@ -14,15 +15,14 @@ namespace StrollerStore
 
     public class Customer
     {
-        private static int lastCustomerId = 0;
-
+        
         #region Properties
 
         /// <summary>
         /// Customer's identification number
         /// </summary>
         [Key]       
-        public int CustomerId { get; private set; }
+        public int CustomerId { get; set; }
 
         /// <summary>
         /// Customer's first name
@@ -44,15 +44,14 @@ namespace StrollerStore
         [Required] 
         [StringLength(50, ErrorMessage = "Email address cannot be more than 50 charachters")]
         public string EmailAddress { get; set; }
-        
+
+        public virtual ICollection<Order> Orders { get; set; }
+
         #endregion
 
         #region Constructors
 
-        public Customer()
-        {
-            CustomerId = ++lastCustomerId;
-        }
+       
 
         #endregion
     }

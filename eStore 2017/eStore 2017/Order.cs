@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,7 +25,18 @@ namespace StrollerStore
         public string OrderStatus { get; set; }
         [Required]
         public int Quantity { get; set; }
-        public Product OrderedProduct { get; set; }
+
+        
+        public int ProductCode { get; set; }
+
+        [ForeignKey("ProductCode")]
+        public virtual Product OrderedProduct { get; set; }
+
+
+        public int CustomerId { get; set; }
+
+        [ForeignKey("CustomerId")]
+        public virtual Customer ShipToCustomer { get; set; }
 
         #endregion
         #region Methods

@@ -30,6 +30,7 @@ namespace StrollerStore
         /// </summary>
         [Required]
         public decimal ProductPrice { get;  set; }
+        public virtual ICollection<Order> Orders { get; set; }
 
         #endregion
 
