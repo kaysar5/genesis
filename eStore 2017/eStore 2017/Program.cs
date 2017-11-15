@@ -29,7 +29,7 @@ namespace StrollerStore
                 Console.WriteLine("Please choose an option");
                 Console.WriteLine("0.Exit");
                 Console.WriteLine("1.Create a customer account");
-                Console.WriteLine("2.Choose a Product");
+                Console.WriteLine("2.Show products");                
                 Console.WriteLine("3.Check the order status");
                 Console.WriteLine("4.Make a payment");
 
@@ -51,10 +51,15 @@ namespace StrollerStore
                         Console.WriteLine($"CustomerID:{customer.CustomerId}");
                         break;
                     case "2":
-                        ChooseProduct();
+                        Product chosenProduct = ShowProduct();
                          
                         break;
-                    case "3":
+
+                   
+                     
+
+                        
+                    case "4":
                         Console.WriteLine("Orderstatus");
                         var orderStatus = Enum.GetNames(typeof(TypeOfStatus));
                         for (int i = 0; i < orderStatus.Length; i++)
@@ -63,7 +68,7 @@ namespace StrollerStore
                         }
                         var orderType = (TypeOfStatus)Enum.Parse(typeof(TypeOfStatus), Console.ReadLine());
                         break;
-                    case "4":
+                    case "5":
                         Console.WriteLine("Payment Type:");
                         var paymentTypes = Enum.GetNames(typeof(TypeOfPayment));
                         for (int i = 0; i < paymentTypes.Length; i++)
@@ -80,15 +85,22 @@ namespace StrollerStore
 
         }
 
-        private static void ChooseProduct()
+        private static Product ShowProduct()
         {
             Console.WriteLine("Here are the choices: ");
             var productList = Store.GetAllProduct();
-
+            int i = 0;
             foreach (Product p in productList)
             {
+                Console.WriteLine(i++);
                 p.print();
             }
+            Console.Write("Your Choice: ");
+            int answer = Int32.Parse(Console.ReadLine());
+
+
+
+            return productList[answer-1];
 
 
         }

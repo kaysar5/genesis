@@ -18,3 +18,4 @@ C:\Users\kayen\Documents\GitHub\genesis\eStore 2017\eStore 2017\bin\Debug\Entity
 C:\Users\kayen\Documents\GitHub\genesis\eStore 2017\eStore 2017\obj\Debug\eStore_2017.Migrations.InitialCreate.resources
 C:\Users\kayen\Documents\GitHub\genesis\eStore 2017\eStore 2017\obj\Debug\StrollerStore.csproj.GenerateResource.Cache
 C:\Users\kayen\Documents\GitHub\genesis\eStore 2017\eStore 2017\obj\Debug\eStore_2017.Migrations.Orders.resources
+C:\Users\kayen\Documents\GitHub\genesis\eStore 2017\eStore 2017\obj\Debug\StrollerStore.csprojResolveAssemblyReference.cache
