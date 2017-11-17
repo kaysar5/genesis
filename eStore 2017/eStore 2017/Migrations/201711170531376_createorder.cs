@@ -3,7 +3,7 @@ namespace eStore_2017.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class InitialCreate : DbMigration
+    public partial class createorder : DbMigration
     {
         public override void Up()
         {
@@ -23,13 +23,16 @@ namespace eStore_2017.Migrations
                 c => new
                     {
                         OrderNumber = c.Int(nullable: false, identity: true),
-                        OrderStatus = c.String(nullable: false),
+                        OrderStatus = c.Int(nullable: false),
                         Quantity = c.Int(nullable: false),
-                        OrderedProduct_ProductCode = c.Int(),
+                        ProductCode = c.Int(nullable: false),
+                        CustomerId = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.OrderNumber)
-                .ForeignKey("dbo.Products", t => t.OrderedProduct_ProductCode)
-                .Index(t => t.OrderedProduct_ProductCode);
+                .ForeignKey("dbo.Products", t => t.ProductCode, cascadeDelete: true)
+                .ForeignKey("dbo.Customers", t => t.CustomerId, cascadeDelete: true)
+                .Index(t => t.ProductCode)
+                .Index(t => t.CustomerId);
             
             CreateTable(
                 "dbo.Products",
@@ -45,8 +48,10 @@ namespace eStore_2017.Migrations
         
         public override void Down()
         {
-            DropForeignKey("dbo.Orders", "OrderedProduct_ProductCode", "dbo.Products");
-            DropIndex("dbo.Orders", new[] { "OrderedProduct_ProductCode" });
+            DropForeignKey("dbo.Orders", "CustomerId", "dbo.Customers");
+            DropForeignKey("dbo.Orders", "ProductCode", "dbo.Products");
+            DropIndex("dbo.Orders", new[] { "CustomerId" });
+            DropIndex("dbo.Orders", new[] { "ProductCode" });
             DropTable("dbo.Products");
             DropTable("dbo.Orders");
             DropTable("dbo.Customers");

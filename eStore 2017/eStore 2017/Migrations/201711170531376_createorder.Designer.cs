@@ -7,13 +7,13 @@ namespace eStore_2017.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class Orders : IMigrationMetadata
+    public sealed partial class createorder : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Orders));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(createorder));
         
         string IMigrationMetadata.Id
         {
-            get { return "201711090639175_Orders"; }
+            get { return "201711170531376_createorder"; }
         }
         
         string IMigrationMetadata.Source

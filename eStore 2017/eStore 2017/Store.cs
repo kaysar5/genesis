@@ -67,11 +67,12 @@ namespace StrollerStore
         /// <param name="orderStatus">status of the order</param>
         /// <param name="Quantity">total no of ordered products</param>
         /// <returns>returns</returns>
-        public static Order CreateOrder(int orderNumber, string orderStatus, int Quantity)
+        public static Order CreateOrder(int customerId, int productCode, TypeOfStatus status , int Quantity)
         {
             var order = new Order();
-            order.OrderNumber = orderNumber;
-            order.OrderStatus = orderStatus;
+            order.ProductCode = productCode;
+            order.CustomerId = customerId;
+            order.OrderStatus = status;
             order.Quantity = Quantity;
             db.Orders.Add(order);
             db.SaveChanges();
@@ -79,7 +80,7 @@ namespace StrollerStore
         }
         public static List<Order> GetAllOrders(int orderNumber)
         {
-            return db.Orders.Where(a => a.OrderNumber == orderNumber).ToList();
+            return db.Orders.Where(o => o.OrderNumber == orderNumber).ToList();
         }
     }          
             

@@ -11,11 +11,11 @@ namespace StrollerStore
         static void Main(string[] args)
         {
             //Initialize customers
-            //Store.CreateCustomer("someone@somewhere.com", "Some", "One");
-            //Store.CreateProduct("Single Stroller", (decimal)250);
-            //Store.CreateProduct("Double Stroller", (decimal)350);
-            //Store.CreateProduct("Triple Stroller", (decimal)400);
-            //Store.CreateProduct("Jogger Stroller", (decimal)200);
+            Store.CreateCustomer("someone@somewhere.com", "Some", "One");
+            Store.CreateProduct("Single Stroller", (decimal)250);
+            Store.CreateProduct("Double Stroller", (decimal)350);
+            Store.CreateProduct("Triple Stroller", (decimal)400);
+            Store.CreateProduct("Jogger Stroller", (decimal)200);
 
 
 
@@ -29,9 +29,10 @@ namespace StrollerStore
                 Console.WriteLine("Please choose an option");
                 Console.WriteLine("0.Exit");
                 Console.WriteLine("1.Create a customer account");
-                Console.WriteLine("2.Show products");                
-                Console.WriteLine("3.Check the order status");
-                Console.WriteLine("4.Make a payment");
+                Console.WriteLine("2.Show products");
+                Console.WriteLine("3.Create Order");
+                Console.WriteLine("4.Check the order status");
+                Console.WriteLine("5.Make a payment");
 
 
                 var choice = Console.ReadLine();
@@ -50,15 +51,23 @@ namespace StrollerStore
                         var customer = Store.CreateCustomer(customerName, lastName, emailAddress);
                         Console.WriteLine($"CustomerID:{customer.CustomerId}");
                         break;
+
                     case "2":
                         Product chosenProduct = ShowProduct();
-                         
                         break;
 
-                   
-                     
-
-                        
+                    case "3":
+                        Console.WriteLine($"CustomerID:");
+                        var customerId = Console.ReadLine();
+                        Console.WriteLine("Product Code");
+                        var productCode = Console.ReadLine();
+                        Console.WriteLine("Quantity");
+                        var quantity = Console.ReadLine();
+                        var order= Store.CreateOrder(Int32.Parse(customerId), Int32.Parse(productCode), TypeOfStatus.Complete, Int32.Parse(quantity));
+                        Console.WriteLine();                     
+                                               
+                        break;                
+                                            
                     case "4":
                         Console.WriteLine("Orderstatus");
                         var orderStatus = Enum.GetNames(typeof(TypeOfStatus));
@@ -97,9 +106,7 @@ namespace StrollerStore
             }
             Console.Write("Your Choice: ");
             int answer = Int32.Parse(Console.ReadLine());
-
-
-
+            
             return productList[answer-1];
 
 

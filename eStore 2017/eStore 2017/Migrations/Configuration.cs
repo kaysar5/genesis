@@ -10,7 +10,6 @@ namespace eStore_2017.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
-            ContextKey = "StrollerStore.StoreModel";
         }
 
         protected override void Seed(StrollerStore.StoreModel context)

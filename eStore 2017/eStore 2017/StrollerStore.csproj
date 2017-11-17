@@ -54,13 +54,9 @@
     <Compile Include="Address.cs" />
     <Compile Include="Customer.cs" />
     <Compile Include="Inventory.cs" />
-    <Compile Include="Migrations\201711060539145_InitialCreate.cs" />
-    <Compile Include="Migrations\201711060539145_InitialCreate.Designer.cs">
-      <DependentUpon>201711060539145_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201711090639175_Orders.cs" />
-    <Compile Include="Migrations\201711090639175_Orders.Designer.cs">
-      <DependentUpon>201711090639175_Orders.cs</DependentUpon>
+    <Compile Include="Migrations\201711170531376_createorder.cs" />
+    <Compile Include="Migrations\201711170531376_createorder.Designer.cs">
+      <DependentUpon>201711170531376_createorder.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Order.cs" />
@@ -81,11 +77,8 @@
     <Folder Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201711060539145_InitialCreate.resx">
-      <DependentUpon>201711060539145_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201711090639175_Orders.resx">
-      <DependentUpon>201711090639175_Orders.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201711170531376_createorder.resx">
+      <DependentUpon>201711170531376_createorder.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

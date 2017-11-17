@@ -22,7 +22,7 @@ namespace StrollerStore
         [Key]
         public int OrderNumber { get; set; }
         [Required]
-        public string OrderStatus { get; set; }
+        public TypeOfStatus OrderStatus { get; set; }
         [Required]
         public int Quantity { get; set; }
 
