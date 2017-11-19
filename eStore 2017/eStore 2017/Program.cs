@@ -59,13 +59,41 @@ namespace StrollerStore
                     case "3":
                         Console.WriteLine($"CustomerID:");
                         var customerId = Console.ReadLine();
+                        int custId;
+
+                        try
+                        {
+                            custId = Int32.Parse(customerId);
+                        }
+                        catch (System.FormatException e)
+                        {
+                            Console.WriteLine("Error in input; failed due to error in formatting:{0} ", e.Message);
+                            break;
+                        }
+
                         Console.WriteLine("Product Code");
                         var productCode = Console.ReadLine();
+                        int pdCode;
+                        try
+                        {
+                            pdCode = Int32.Parse(productCode);
+                        }
+                        catch(System.FormatException e)
+                        {
+                            Console.WriteLine("Error in input; failed due to error in formatting:{0}",e.Message);
+                            break;
+                        }
+
                         Console.WriteLine("Quantity");
                         var quantity = Console.ReadLine();
-                        var order= Store.CreateOrder(Int32.Parse(customerId), Int32.Parse(productCode), TypeOfStatus.Complete, Int32.Parse(quantity));
-                        Console.WriteLine();                     
-                                               
+                        
+                        
+                            var order= Store.CreateOrder(Int32.Parse(customerId), Int32.Parse(productCode), TypeOfStatus.Complete, Int32.Parse(quantity));
+                        
+                        
+                        Console.WriteLine();                      
+
+
                         break;                
                                             
                     case "4":
