@@ -1,0 +1,51 @@
+﻿@model IEnumerable<StrollerStore.Order>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.OrderedProduct.ProductName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ShipToCustomer.CustomerName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OrderStatus)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Quantity)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.OrderedProduct.ProductName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ShipToCustomer.CustomerName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OrderStatus)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Quantity)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.OrderNumber }) |
+            @Html.ActionLink("Details", "Details", new { id=item.OrderNumber }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.OrderNumber })
+        </td>
+    </tr>
+}
+
+</table>
