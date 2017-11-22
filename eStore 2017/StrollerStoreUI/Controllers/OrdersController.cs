@@ -15,6 +15,7 @@ namespace StrollerStoreUI.Controllers
         private StoreModel db = new StoreModel();
 
         // GET: Orders
+        [Authorize]
         public ActionResult Index()
         {
             var orders = db.Orders.Include(o => o.OrderedProduct).Include(o => o.ShipToCustomer);
