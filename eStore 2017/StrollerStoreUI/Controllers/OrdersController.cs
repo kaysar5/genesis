@@ -19,6 +19,8 @@ namespace StrollerStoreUI.Controllers
         public ActionResult Index()
         {
             var orders = db.Orders.Include(o => o.OrderedProduct).Include(o => o.ShipToCustomer);
+            var custIdList = Store.GetAllCustomers(HttpContext.User.Identity.Name);
+            ViewBag.CustomerId = custIdList[0].CustomerId;
             return View(orders.ToList());
         }
 
@@ -50,8 +52,11 @@ namespace StrollerStoreUI.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "OrderNumber,OrderStatus,Quantity,ProductCode,CustomerId")] Order order)
+        public ActionResult Create([Bind(Include = "OrderStatus,Quantity,ProductCode")] Order order)
         {
+            var custList = Store.GetAllCustomers(HttpContext.User.Identity.Name);
+            order.CustomerId = custList[0].CustomerId;
+
             if (ModelState.IsValid)
             {
                 db.Orders.Add(order);
@@ -59,8 +64,8 @@ namespace StrollerStoreUI.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.ProductCode = new SelectList(db.Products, "ProductCode", "ProductName", order.ProductCode);
-            ViewBag.CustomerId = new SelectList(db.Customers, "CustomerId", "CustomerName", order.CustomerId);
+            ViewBag.ProductCode = new SelectList(db.Products, "ProductCode", "ProductName", order.ProductCode); 
+            //ViewBag.CustomerId = new SelectList(db.Customers, "CustomerId", "CustomerName", order.CustomerId);
             return View(order);
         }
 
